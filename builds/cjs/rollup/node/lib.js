@@ -1,0 +1,1 @@
+!function(e,o){"object"==typeof exports&&"undefined"!=typeof module?o(exports):"function"==typeof define&&define.amd?define(["exports"],o):o((e=e||self).lib={})}(this,function(e){"use strict";var o={loga:function(e){console.log("a",e)},logb:function(e){console.log("b",e)}},n=o.loga,t=o.logb;e.default=o,e.loga=n,e.logb=t,Object.defineProperty(e,"__esModule",{value:!0})});

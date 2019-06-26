@@ -1,0 +1,43 @@
+{
+  "name": "module-test",
+  "version": "1.0.0",
+  "description": "Test parcel, webpack, rollup",
+  "main": "builds/cjs/webpack/node/lib.js",
+  "scripts": {
+    "build:cjs:parcel:web": "rimraf ./builds/cjs/parcel/web/* && parcel build src/entry/index.parcel.cjs.html -d ./builds/cjs/parcel/web/",
+    "build:cjs:parcel:node": "rimraf ./builds/cjs/parcel/node/* && parcel build src/cjs-lib.js --out-file lib.js -d ./builds/cjs/parcel/node/ --target node",
+    "build:es6:parcel:web": "rimraf ./builds/es6/parcel/web/* && parcel build src/entry/index.parcel.es6.html -d ./builds/es6/parcel/web/",
+    "build:es6:parcel:node": "rimraf ./builds/es6/parcel/node/* && parcel build src/cjs-lib.js --out-file lib.js -d ./builds/es6/parcel/node/ --target node",
+    "build:mix:parcel:web": "rimraf ./builds/mix/parcel/web/* && parcel build src/entry/index.parcel.mix.html -d ./builds/mix/parcel/web/",
+    "build:mix:parcel:node": "rimraf ./builds/mix/parcel/node/* && parcel build src/cjs-lib.js --out-file lib.js -d ./builds/mix/parcel/node/ --target node",
+    "build:cjs:webpack:web": "rimraf ./builds/webpack/web/* && webpack --config webpack.cjs.web.js",
+    "build:cjs:webpack:node": "rimraf ./builds/webpack/node/* && webpack --config webpack.cjs.node.js",
+    "build:es6:webpack:web": "rimraf ./builds/webpack/web/* && webpack --config webpack.es6.web.js",
+    "build:es6:webpack:node": "rimraf ./builds/webpack/node/* && webpack --config webpack.es6.node.js",
+    "build:mix:webpack:web": "rimraf ./builds/webpack/web/* && webpack --config webpack.mix.web.js",
+    "build:mix:webpack:node": "rimraf ./builds/webpack/node/* && webpack --config webpack.mix.node.js",
+    "build:cjs:rollup": "rimraf ./builds/cjs/rollup/* && rollup --config rollup.cjs.js --environment BUILD:production",
+    "build:es6:rollup": "rimraf ./builds/es6/rollup/* && rollup --config rollup.es6.js --environment BUILD:production",
+    "build:mix:rollup": "rimraf ./builds/mix/rollup/* && rollup --config rollup.mix.js --environment BUILD:production",
+    "build:parcel": "npm run build:cjs:parcel:web && npm run build:cjs:parcel:node && npm run build:es6:parcel:web && npm run build:es6:parcel:node && npm run build:mix:parcel:web && npm run build:mix:parcel:node",
+    "build:webpack": "npm run build:cjs:webpack:web && npm run build:cjs:webpack:node && npm run build:es6:webpack:web && npm run build:es6:webpack:node && npm run build:mix:webpack:web && npm run build:mix:webpack:node",
+    "build:rollup": "npm run build:cjs:rollup && npm run build:es6:rollup && npm run build:mix:rollup",
+    "build": "npm run build:parcel && npm run build:webpack && npm run build:rollup",
+    "test": "jest"
+  },
+  "author": "jacob",
+  "license": "ISC",
+  "devDependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.8.0",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.16.2",
+    "rollup-plugin-bundle-html": "^0.2.1",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-terser": "^5.0.0",
+    "terser-webpack-plugin": "^1.3.0",
+    "webpack": "^4.35.0",
+    "webpack-cli": "^3.3.5"
+  },
+  "dependencies": {}
+}

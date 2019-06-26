@@ -1,0 +1,1 @@
+!function(e,o){"object"==typeof exports&&"undefined"!=typeof module?module.exports=o():"function"==typeof define&&define.amd?define(o):(e=e||self).lib=o()}(this,function(){"use strict";return{loga:function(e){console.log("a",e)},logb:function(e){console.log("b",e)}}});
